@@ -17,8 +17,11 @@
 ## Downsides of Traditional Alignment
 
 &nbsp;&nbsp;&nbsp;&nbsp; The RNA-sequencing data analysis pipeline involves the alignment of sequenced reads to a reference genome or transcriptome, the quantification of the number of reads aligned to each gene in the reference, the identification of differentially expressed genes, and the discernment of enriched biological pathways. 
+
 &nbsp;&nbsp;&nbsp;&nbsp; The alignment and quantification steps of RNA-sequencing data analysis are incredibly time and resource intensive — traditional alignment tools such as TopHat and Cufflinks can take tens of hours and require significant computing power in order to complete alignment and quantification. This is because traditional alignment requires the matching of each individual read to a particular location on a reference genome, which is computationally expensive when millions of reads are involved. As datasets become progressively larger and analysis takes longer, it becomes imperative to reduce processing time for quantification.
+
 &nbsp;&nbsp;&nbsp;&nbsp; Some alternative methods of quantification have been introduced, but they increase time efficiency at the expense of accuracy. One such method called eXpress involves a streaming algorithm that calculates the probabilities for multiple sites that a particular read can map to based on prior approximations. Another tool, htseq-count, only retains a subset of reads that clearly map to only one site on a reference. Additionally, the tool Sailfish utilizes hashing and lookup tables to match k-mers from a dataset, which obscures essential information that can only be discerned from full-length reads.
+
 &nbsp;&nbsp;&nbsp;&nbsp; In response to the challenges associated with alignment and quantification, the tool “kallisto” was created to maximize time efficiency without sacrificing accuracy by employing a technique called pseudoalignment (Bray et al).
 
 ## Pseudoalignment
