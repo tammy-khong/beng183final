@@ -35,7 +35,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; After forming these equivalence classes, kallisto uses the Expectation-Maximization (EM) algorithm to maximize the probabilities of selecting reads from specific transcripts, essentially determining the most probable distribution of reads across transcripts (Bray et al).
 
 ## Figures
-[include comparison, pseudoalignment pictures here]
+![Pseudoalignment](images/pseudoalignment.jpg)
 ## Traditional Alignment Tools vs. Kallisto
 &nbsp;&nbsp;&nbsp;&nbsp; Traditional alignment-based tools and pseudoalignment tools each offer distinct strengths depending on the downstream analysis goals and characteristics of the experimental data. STAR, one of the most widely used traditional alignment tools, performs full read alignment and is splice aware. Because STAR can map reads across exon–exon junctions, the tool is well suited for analyses involving alternative splicing, datasets with high sequencing depth, and datasets where genes are expressed at low levels. However, STAR’s full alignment process is computationally intensive and significantly slower than the pseudoalignment approach.
 
