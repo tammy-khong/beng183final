@@ -89,14 +89,22 @@ Kallisto is valuable for the proper processing of RNA-sequencing data due to its
 ## Works Cited
 
 Bray, Nicolas L, et al. “Near-Optimal Probabilistic RNA-Seq Quantification.” Nature Biotechnology, vol. 34, no. 5, 4 Apr. 2016, pp. 525–527, https://doi.org/10.1038/nbt.3519.
-Download.” Github.io, 4 Oct. 2019, pachterlab.github.io/kallisto/download. Accessed 17 Nov. 2025.
+
+"Download.” Github.io, 4 Oct. 2019, pachterlab.github.io/kallisto/download. Accessed 17 Nov. 2025.
+
 “Getting Started.” Github.io, 2018, pachterlab.github.io/kallisto/starting.
+
 Jiang, Gao, et al. “A Comprehensive Workflow for Optimizing RNA-Seq Data Analysis.” BMC Genomics, vol. 25, no. 1, 24 June 2024, https://doi.org/10.1186/s12864-024-10414-y.
+
 “Kallisto Manual.” Pachterlab.github.io, pachterlab.github.io/kallisto/manual. 
+
 Yi, Lynn, et al. “A direct comparison of genome alignment and transcriptome pseudoalignment.” bioRxiv 444620; doi: https://doi.org/10.1101/44620 
 Pachter Lab. “Apps.” Github.io, 2018, pachterlab.github.io/kallisto/apps. Accessed 17 Nov. 2025.
+
 Pimentel, Harold, et al. “Getting Started with Sleuth.” Github.io, 2025, pachterlab.github.io/sleuth_walkthroughs/trapnell/analysis.html. Accessed 17 Nov. 2025.
+
 Srivastava, Kriti. “Kallisto vs. STAR: Alignment and Quantification of Bulk RNA-Seq Data.” Www.elucidata.io, 29 May 2023, www.elucidata.io/blog/kallisto-vs-star-alignment-and-quantification-of-bulk-rna-seq-data.   Accessed 16 Nov. 2025.
+
 Wu, Douglas C., et al. “Limitations of Alignment-Free Tools in Total RNA-Seq Quantification.” BMC Genomics, vol. 19, no. 1, 3 July 2018, https://doi.org/10.1186/s12864-018-4869-5. 
 
 
