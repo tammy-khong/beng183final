@@ -36,6 +36,21 @@
 
 ## Figures
 ![Pseudoalignment](images/pseudoalignment.jpg)
+Figure 1: Overview of Kallisto (Bray et al)
+
+Caption: Kallisto requires a set of RNA-seq reads and a reference transcriptome. 
+- Subgraph “a” shows a sample input for the algorithm to run - the black shape represents a read, and the colored bars below represent various overlapping RNA transcripts that the read could be mapped to.
+- Subgraph “b” illustrates the construction of a transcriptome De Bruijn graph (T-DBG), where each node represents a k-mer and a viable path through the nodes represents a transcript.
+- Subgraph “c” shows the hashing of a read’s k-mers to determine its compatibility class.
+- Subgraph “d” illustrates the skipping of redundant k-mers that have the same compatibility class.
+- Subgraph “e” shows the calculation of the overall read’s k-compatibility class by determining the intersection of the read’s k’mer’s k-compatibility classes.
+
+![Comparison](images/compare.jpg)
+
+Figure 2: Alignment/Quantification performance comparison (Bray et al).
+- Subgraph “a” quantifies the accuracy of each tool. “Median relative difference” refers to the difference between a tool’s generated estimated counts versus the real count values.
+- Subgraph “b” illustrates the time efficiency of each tool. The bars for each tool are additionally divided into time taken for the alignment and quantification steps.
+
 ## Traditional Alignment Tools vs. Kallisto
 &nbsp;&nbsp;&nbsp;&nbsp; Traditional alignment-based tools and pseudoalignment tools each offer distinct strengths depending on the downstream analysis goals and characteristics of the experimental data. STAR, one of the most widely used traditional alignment tools, performs full read alignment and is splice aware. Because STAR can map reads across exon–exon junctions, the tool is well suited for analyses involving alternative splicing, datasets with high sequencing depth, and datasets where genes are expressed at low levels. However, STAR’s full alignment process is computationally intensive and significantly slower than the pseudoalignment approach.
 
@@ -53,19 +68,20 @@
 - ``mkdir kallisto_tutorial``
 - ``cd kallisto_tutorial``
 - Install kallisto using conda following this [guide](https://pachterlab.github.io/kallisto/download)
-[manual picture here]
+![Manual](images/manual.jpg)
+
 ### Step 2: Building an index 
 - Download GTF (comprehensive gene annotation CHR) and FASTA transcripts (all) files from [GENCODE](https://www.gencodegenes.org/human/)
 - ``kallisto index -i gencode.v49.transcripts.idx gencode.v49.transcripts.fa.gz``
- [tdbg picture here]
+ ![tdbg](images/tdbg.jpg)
 - Downloaded paired end RNA-seq reads from [Run SRR493366](https://www.ebi.ac.uk/ena/browser/view/SRR493366)
-[reads here]
+![Reads](images/reads.jpg)
 
 ### Step 3: Quantification
 - ``kallisto quant -i gencode.v49.transcripts.idx -o output -b 100 SRR493366_1.fastq.gz SRR493366_2.fastq.gz ``
 NOTE: bootstrap value of 100 is a default value used in examples to estimate the technical variability and uncertainty in transcript abundance quantification but can take much longer to run!
 - The results of this kallisto run are placed in the output directory specified after -o. Here are the contents of our output directory after quantifying abundance:
-[output here]
+![Output](images/output.jpg)
 
 ### Step 3: Quantification Visualization (Optional)
 - To visualize pseudoalignments kallisto needs to be run with the [--genomebam](https://pachterlab.github.io/kallisto/manual) option with a gene annotation file and an optional, but recommended text file containing the length of each chromosome.
