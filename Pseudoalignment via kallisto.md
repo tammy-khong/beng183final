@@ -35,7 +35,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp; After forming these equivalence classes, kallisto uses the Expectation-Maximization (EM) algorithm to maximize the probabilities of selecting reads from specific transcripts, essentially determining the most probable distribution of reads across transcripts (Bray et al).
 
 ## Figures
+
 ![Pseudoalignment](images/pseudoalignment.jpg)
+
 Figure 1: Overview of Kallisto (Bray et al)
 
 Caption: Kallisto requires a set of RNA-seq reads and a reference transcriptome. 
@@ -68,20 +70,25 @@ Figure 2: Alignment/Quantification performance comparison (Bray et al).
 - ``mkdir kallisto_tutorial``
 - ``cd kallisto_tutorial``
 - Install kallisto using conda following this [guide](https://pachterlab.github.io/kallisto/download)
-![Manual](images/manual.jpg)
+
+![Manual](images/manual.png)
 
 ### Step 2: Building an index 
 - Download GTF (comprehensive gene annotation CHR) and FASTA transcripts (all) files from [GENCODE](https://www.gencodegenes.org/human/)
 - ``kallisto index -i gencode.v49.transcripts.idx gencode.v49.transcripts.fa.gz``
- ![tdbg](images/tdbg.jpg)
+
+ ![tdbg](images/tdbg.png)
+ 
 - Downloaded paired end RNA-seq reads from [Run SRR493366](https://www.ebi.ac.uk/ena/browser/view/SRR493366)
-![Reads](images/reads.jpg)
+
+![Reads](images/reads.png)
 
 ### Step 3: Quantification
 - ``kallisto quant -i gencode.v49.transcripts.idx -o output -b 100 SRR493366_1.fastq.gz SRR493366_2.fastq.gz ``
 NOTE: bootstrap value of 100 is a default value used in examples to estimate the technical variability and uncertainty in transcript abundance quantification but can take much longer to run!
 - The results of this kallisto run are placed in the output directory specified after -o. Here are the contents of our output directory after quantifying abundance:
-![Output](images/output.jpg)
+
+![Output](images/output.png)
 
 ### Step 3: Quantification Visualization (Optional)
 - To visualize pseudoalignments kallisto needs to be run with the [--genomebam](https://pachterlab.github.io/kallisto/manual) option with a gene annotation file and an optional, but recommended text file containing the length of each chromosome.
@@ -93,7 +100,8 @@ NOTE: bootstrap value of 100 is a default value used in examples to estimate the
 - launch R
 ``create an auxiliary table that describes the experimental design and the relationship between the kallisto directories and the samples. Our example:``
 
-[Insert picture here]
+![Output](images/sleuth.png)
+
 
 For full guide on using sleuth:
 [Getting started with sleuth](https://pachterlab.github.io/sleuth_walkthroughs/trapnell/analysis.html)
